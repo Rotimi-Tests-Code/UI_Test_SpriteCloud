@@ -12,6 +12,7 @@ describe('Perform an unsuccessful login',() => {
             expect(response.status).to.equal(400);
             /* Attaching the response body to a constant */
             const missing = response.body; 
+            cy.wait(missing);
             /* Validating that the error is there */
             expect(missing).to.deep.include({
                 error:  "Missing password"
